@@ -7,9 +7,7 @@
   overflow-x: hidden;
 }
 
-/* ==========================================
-   OVERLAY
-   ========================================== */
+
 .sidebar-overlay {
   position: fixed;
   inset: 0;
@@ -26,9 +24,6 @@
   -webkit-backdrop-filter: blur(2px);
 }
 
-/* ==========================================
-   SIDEBAR
-   ========================================== */
 .sidebar {
   position: fixed;
   top: 0;
@@ -159,11 +154,8 @@
   color: #fca5a5;
 }
 
-/* ==========================================
-   NAVBAR
-   ========================================== */
 .navbar {
-  background: rgba(12, 25, 56, 0.85);
+  background: #0c307e;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -224,7 +216,7 @@
   flex-grow: 1;
   background-image:
     linear-gradient(rgba(8, 17, 38, 0.7), rgba(8, 17, 38, 0.85)),
-    url('http://localhost:3001/img/ranger.png');
+    url('/img/ford-brasil-noticia-inicio-venda-bronco-2023-novas-cores-170523.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
