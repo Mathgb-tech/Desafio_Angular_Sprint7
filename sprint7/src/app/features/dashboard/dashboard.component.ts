@@ -1,19 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { VehicleService, Vehicle, VehicleData } from '../../core/services/vehicle.service';
 
 @Component({
   selector: 'app-dashboard',
-  standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  standalone: false,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
+  sidebarOpen = false;
   vehicles: Vehicle[] = [];
   selectedVehicle: Vehicle | null = null;
 
@@ -107,6 +105,19 @@ export class DashboardComponent implements OnInit {
   selectSampleVin(vin: string): void {
     this.vinSearchTerm = vin;
     this.loadVehicleData(vin);
+  }
+
+  toggleSidebar(): void {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
+
+  closeSidebar(): void {
+    this.sidebarOpen = false;
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscapeKey(): void {
+    this.closeSidebar();
   }
 
   onLogout(): void {
