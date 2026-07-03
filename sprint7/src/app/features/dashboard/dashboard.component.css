@@ -186,20 +186,24 @@
   border-radius: 6px;
 }
 
-/* KPI Widgets (sem ícones) */
+/* KPI Widgets */
 .kpi-card {
   transition: all 0.3s ease;
-  min-height: 80px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .kpi-label {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.7px;
+  font-weight: 600;
 }
 
 .kpi-value {
-  font-size: 1.45rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #0f172a;
 }
@@ -223,7 +227,6 @@
   width: 70%;
   max-width: 420px;
   filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.08));
-  animation: floatImg 5s ease-in-out infinite;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -231,11 +234,16 @@
   transform: scale(1.03);
 }
 
-.vehicle-indicator-bar {
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #2563eb, transparent);
-  border-radius: 2px;
+/* Centered select card */
+.centered-select-card {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* KPI row centralized */
+.kpi-row {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* Table Custom Design (Light and Clean) */
@@ -332,18 +340,7 @@
   color: #0f172a;
 }
 
-/* Floating animation */
-@keyframes floatImg {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
+
 
 /* Responsive fixes */
 @media (max-width: 991px) {
