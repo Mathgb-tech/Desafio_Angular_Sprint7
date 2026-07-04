@@ -8,7 +8,7 @@
 
 /* Glassmorphic/Sleek Navbar (Ford Blue corporate identity) */
 .navbar {
-  background: #061129;
+  background: #0c307e;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   height: 70px;
 }
@@ -130,9 +130,9 @@
   font-weight: 500;
 }
 
-/* VIN Quick Links */
+/* VIN Quick Links container */
 .vin-quick-links {
-  max-height: 180px;
+  max-height: 200px;
   overflow-y: auto;
   padding-right: 4px;
 }
@@ -146,30 +146,35 @@
   border-radius: 4px;
 }
 
-.vin-link {
+/* VIN estático — apenas para leitura/cópia, sem hover interativo */
+.vin-static {
+  display: block;
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
   color: #475569;
-  text-decoration: none;
   font-size: 0.82rem;
   font-family: monospace;
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  user-select: all;       /* facilita seleção com clique duplo */
+  cursor: text;
+  letter-spacing: 0.5px;
 }
 
-.vin-link:hover {
-  background: rgba(37, 99, 235, 0.05);
-  border-color: rgba(37, 99, 235, 0.3);
-  color: #2563eb;
+/* Busca VIN integrada ao cabeçalho da tabela */
+.vin-inline-search {
+  min-width: 280px;
+  flex: 1;
+  max-width: 420px;
 }
 
-.vin-link.active-vin {
-  background: rgba(37, 99, 235, 0.08);
-  border-color: #2563eb;
-  color: #2563eb;
-  font-weight: bold;
+.vin-inline-search .input-group .form-control {
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+}
+
+.vin-inline-search .input-group .btn {
+  border-radius: 0 8px 8px 0;
 }
 
 .alert-danger-custom {
@@ -184,45 +189,21 @@
 /* KPI Widgets */
 .kpi-card {
   transition: all 0.3s ease;
-  min-height: 85px;
-}
-
-.kpi-icon-wrapper {
-  width: 45px;
-  height: 45px;
-  border-radius: 10px;
+  min-height: 120px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  flex-shrink: 0;
-}
-
-.sales-bg {
-  background: rgba(245, 158, 11, 0.08);
-  color: #b45309;
-  border: 1px solid rgba(245, 158, 11, 0.2);
-}
-
-.connected-bg {
-  background: rgba(16, 185, 129, 0.08);
-  color: #047857;
-  border: 1px solid rgba(16, 185, 129, 0.2);
-}
-
-.updates-bg {
-  background: rgba(37, 99, 235, 0.08);
-  color: #1d4ed8;
-  border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
 .kpi-label {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.7px;
+  font-weight: 600;
 }
 
 .kpi-value {
-  font-size: 1.35rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #0f172a;
 }
@@ -246,7 +227,6 @@
   width: 70%;
   max-width: 420px;
   filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.08));
-  animation: floatImg 5s ease-in-out infinite;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -254,11 +234,16 @@
   transform: scale(1.03);
 }
 
-.vehicle-indicator-bar {
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #2563eb, transparent);
-  border-radius: 2px;
+/* Centered select card */
+.centered-select-card {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* KPI row centralized */
+.kpi-row {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* Table Custom Design (Light and Clean) */
@@ -355,18 +340,7 @@
   color: #0f172a;
 }
 
-/* Floating animation */
-@keyframes floatImg {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
+
 
 /* Responsive fixes */
 @media (max-width: 991px) {
