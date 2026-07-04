@@ -61,24 +61,49 @@
             <!-- KPI Cards (no topo, centralizados) -->
             <div class="row g-4 w-100 justify-content-center kpi-row">
 
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="card glass-card kpi-card p-4">
-                        <span class="kpi-label d-block text-muted-custom mb-2">Total de Vendas</span>
-                        <h2 class="kpi-value m-0">{{ selectedVehicle ? (selectedVehicle.volumetotal) : '0' }}</h2>
+                        <div class="kpi-icon-wrapper sales-bg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+                                <path d="M22 12A10 10 0 0 0 12 2v10z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="kpi-label d-block text-muted-custom mb-1">Total de Vendas</span>
+                            <h2 class="kpi-value m-0">{{ selectedVehicle ? (selectedVehicle.volumetotal) : '0' }}</h2>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="card glass-card kpi-card p-4">
-                        <span class="kpi-label d-block text-muted-custom mb-2">Veículos Conectados</span>
-                        <h2 class="kpi-value m-0">{{ selectedVehicle ? (selectedVehicle.connected) : '0' }}</h2>
+                        <div class="kpi-icon-wrapper connected-bg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                                <line x1="2" y1="10" x2="22" y2="10"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="kpi-label d-block text-muted-custom mb-1">Veículos Conectados</span>
+                            <h2 class="kpi-value m-0">{{ selectedVehicle ? (selectedVehicle.connected) : '0' }}</h2>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="card glass-card kpi-card p-4">
-                        <span class="kpi-label d-block text-muted-custom mb-2">Softwares Atualizados</span>
-                        <h2 class="kpi-value m-0">{{ selectedVehicle ? (selectedVehicle.softwareUpdates) : '0' }}</h2>
+                        <div class="kpi-icon-wrapper updates-bg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                                <path d="M3 3v5h5"/>
+                                <polyline points="12 7 12 12 15 15"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="kpi-label d-block text-muted-custom mb-1">Softwares Atualizados</span>
+                            <h2 class="kpi-value m-0">{{ selectedVehicle ? (selectedVehicle.softwareUpdates) : '0' }}</h2>
+                        </div>
                     </div>
                 </div>
 
@@ -140,10 +165,7 @@
                     </div>
                 </div>
 
-                <!-- Badge VIN encontrado -->
-                <div class="mb-3" *ngIf="selectedVehicleData">
-                    <span class="badge bg-success-custom">VIN: {{ vinSearchTerm }}</span>
-                </div>
+                <!-- Badge VIN removido conforme solicitado -->
 
                 <div class="table-responsive">
                     <table class="table table-custom align-middle m-0">

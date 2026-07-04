@@ -191,8 +191,38 @@
   transition: all 0.3s ease;
   min-height: 120px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+.kpi-icon-wrapper {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+.sales-bg {
+  background: rgba(245, 158, 11, 0.08);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.connected-bg {
+  background: rgba(16, 185, 129, 0.08);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.updates-bg {
+  background: rgba(37, 99, 235, 0.08);
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
 .kpi-label {
@@ -210,10 +240,12 @@
 
 /* Center Display Vehicle Image (Pure White background to blend perfectly) */
 .center-display-card {
-  min-height: 280px;
+  min-height: 320px;
   background: #ffffff;
   position: relative;
   overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .vehicle-title-display {
@@ -224,8 +256,8 @@
 }
 
 .display-vehicle-img {
-  width: 70%;
-  max-width: 420px;
+  width: 90%;
+  max-width: 700px;
   filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.08));
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -237,12 +269,12 @@
 /* Centered select card */
 .centered-select-card {
   width: 100%;
-  max-width: 480px;
+  max-width: 600px;
 }
 
 /* KPI row centralized */
 .kpi-row {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
